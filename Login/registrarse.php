@@ -52,11 +52,25 @@ class registrar extends Conectar {
         return $this->password;
     }
 
-
+    public function checkUser($email){
+        try {
+            $stm=$this->dbCnx->prepare("SELECT * FROM user WHERE email= '$email'");
+            $stm->execute ( );
+            if($stm->fetchColumn()){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (Exception $e) {
+            return $e->getMessage();
+         }
+    }
     public function inserData(){
         try {
             $stm=$this->dbCnx->prepare( "INSERT INTO user (idCamper,email,username,password) values (?,?,?,?)");
             $stm->execute ([$this->idCamper, $this->email, $this->username,md5($this->password)]);
+          
+
         }catch (Exception $e) {
             return $e->getMessage();
          }

@@ -25,3 +25,21 @@ if(isset ($_POST['Registrase'])){
 
 
 };
+
+session_start();
+
+if (isset($_POST['loguearse'])) {
+    require_once("loginUser.php");
+    $credenciales = new loginUser();
+
+    $credenciales ->setEmail($_POST['email']);
+    $credenciales ->setpassword($_POST['password']);
+
+    $login= $credenciales -> login();
+    if ($login) {
+        header('location:../Home/home.php');
+    }else{
+        echo "<script>alert('datos Incorrectos');document.location='loginRegister.php'</script>";
+    }
+   
+}
