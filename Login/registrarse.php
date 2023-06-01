@@ -5,18 +5,27 @@ require_once('../Estudiantes/concetar.php');
 
 class registrar extends Conectar {
 
+    private $id;
     private $idCamper;
     private $email;
     private $username;
     private $password;
 
-    public function __construct($idCamper=0,$email="",$username="",$password="",$dbCnx=""){
-
+    public function __construct($id=0,$idCamper=0,$email="",$username="",$password="",$dbCnx=""){
+        $this->id=$id;
         $this->idCamper=$idCamper;
         $this->email=$email;
         $this->username=$username;
         $this->password=$password;
         parent::__construct($dbCnx);
+    }
+
+    public function setId($id){
+        $this->id = $id;
+    }
+
+    public function getId(){
+        return $this->id;
     }
 
     public function setidCamper($idCamper){

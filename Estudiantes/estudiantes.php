@@ -13,7 +13,7 @@ error_reporting(E_ALL);
 require_once("Estudiantes.php");
 $data= new Estudinate();
 $all = $data -> obtenerAll();
-
+  
 
 ?>
 

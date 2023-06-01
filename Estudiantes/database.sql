@@ -7,7 +7,12 @@ CREATE TABLE campers(
     id INT primary key AUTO_INCREMENT,
     nombres VARCHAR(50) NOT NULL,
     direccion VARCHAR(50),
-    logros VARCHAR(60)
+    logros VARCHAR(60),
+    ingles FLOAT(10),
+    ser FLOAT(10),
+    review FLOAT(10),
+    skils FLOAT(10),
+    especialidad VARCHAR(60)
 );
 
 
@@ -29,3 +34,7 @@ CREATE TABLE user(
     password VARCHAR (60) NOT NULL,
     FOREIGN KEY (idCamper) REFERENCES campers (id)
 );
+
+DROP DATABASE campusv2;
+
+DROP TABLE campers;
