@@ -48,7 +48,7 @@
 
             </div>
             <div class="d-flex justify-content-center align-items-end mt-5 p-2">
-                <p style="text-align: center;">Artemis aprendiendo con TODAAAA!</p>
+                <p style="text-align: center;">Artemis aprendiendo con TODAAA!</p>
 
             </div>
 
